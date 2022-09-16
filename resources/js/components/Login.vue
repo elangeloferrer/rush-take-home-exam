@@ -68,8 +68,13 @@ export default {
             this.error = null;
 
             try {
-                await this.$store.dispatch('login', this.form);
-                await this.$router.push({ name: 'Users' });
+                let res = await this.$store.dispatch('login', this.form);
+                console.log('login res', res)
+                if(res.role === 1) {
+                    await this.$router.push({ name: 'Users' });
+                } else {
+                    await this.$router.push({ name: 'NormalUserHome' });
+                }
             } catch (error) {
                 this.error = error;
             }

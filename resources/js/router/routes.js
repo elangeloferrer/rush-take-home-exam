@@ -50,7 +50,7 @@ const routes = [
             beforeEnter: middleware.admin,
         },
         {
-            path: '/h/',
+            path: '/homepage',
             name: 'NormalUserHome',
             component: NormalUserHomeComponent,
             beforeEnter: middleware.user,

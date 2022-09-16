@@ -32,6 +32,8 @@ export default new Vuex.Store({
                     } else {
                         commit('SET_USER', data)
                         sessionStorage.user = JSON.stringify(data);
+                        return data;
+
                     }
                 },
 
