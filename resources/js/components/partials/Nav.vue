@@ -5,13 +5,13 @@
                 <a class="navbar-brand" href="#"><h2>Take Home Exam</h2></a>
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link"><router-link v-if="authenticated && this.user.role === 1" :to="{ name: 'Users' }">Users</router-link></a>
+                        <a class="nav-link"><router-link v-if="authenticated && this.role === 1" :to="{ name: 'Users' }">Users</router-link></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><router-link v-if="!authenticated && this.user.role === 1" :to="{ name: 'Home' }">Home</router-link></a>
+                        <a class="nav-link"><router-link v-if="!authenticated && this.role === 1" :to="{ name: 'Home' }">Home</router-link></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><router-link v-if="authenticated && this.user.role === 2" :to="{ name: 'NormalUserHome' }">Home</router-link></a>
+                        <a class="nav-link"><router-link v-if="authenticated && this.role === 2" :to="{ name: 'NormalUserHome' }">Home</router-link></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"><router-link v-if="!authenticated" :to="{ name: 'Login' }">Login</router-link></a>
@@ -29,6 +29,12 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+    data() {
+        return {
+            role: this.user ? this.user.role : null
+        }
+    },
+
     methods: {
         async logout() {
             try {
