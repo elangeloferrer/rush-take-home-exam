@@ -29,3 +29,10 @@
 - username: admin
 - email: admin@gmail.com
 - password: password
+
+# Technology Used
+- Laravel 8
+- PHP 8.0.13
+- VueJs
+- Vuex
+- Bootstrap 5
