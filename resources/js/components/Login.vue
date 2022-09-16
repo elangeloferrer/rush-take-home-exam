@@ -69,7 +69,6 @@ export default {
 
             try {
                 let res = await this.$store.dispatch('login', this.form);
-                console.log('login res', res)
                 if(res.role === 1) {
                     await this.$router.push({ name: 'Users' });
                 } else {
