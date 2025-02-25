@@ -1,5 +1,5 @@
 ## Clone the project
-- git clone https://github.com/zhairex24/rush-take-home-exam.git project-folder-name
+- git clone https://github.com/elangeloferrer/sample-crud-application.git project-folder-name
 
 ## Go to project folder
 - cd project-folder-name
